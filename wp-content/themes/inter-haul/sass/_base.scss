@@ -1,0 +1,24 @@
+// Colours
+$background: #e4e4e4; /* Grey */
+$bodytext:#5c5c5c;
+$heighlight:#2f8791; /* Green */
+$light:#45b4c7;
+
+
+$linkcolor: #247485; /* Blue */
+$linkhovercolor: #d10363; /* Red/Pink */
+
+$selected-background-color: $linkcolor;
+$selected-font-color:#fff;
+
+// Media queries
+$phonelandscape: 400px;
+$ipad: 768px;
+$desktop: 1000px;
+
+// Mixins
+@mixin border-style($thickness) {
+	border:$thickness solid #d6d6d6;
+}
+
+

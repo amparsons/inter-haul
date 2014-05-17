@@ -1,0 +1,161 @@
+/* MOBILE MENU */
+.toggle {
+	position: relative;
+	float:right;
+  	padding:10px 20px 10px 50px;
+	margin-top:em(15);
+	&:before {
+		content: "";
+		position: absolute;
+		top: 16px;
+		left: 20px;
+		width: 1em;
+		height: 0.125em;
+		border-top: 0.375em double $heighlight;
+		border-bottom: 0.125em solid $heighlight;
+	}
+	@media all and (min-width: $ipad) {
+		display:none;
+	}
+	&:hover, &.active {
+		background:$heighlight;
+		color:#fff;
+		&:before {
+			border-color:#fff;
+		}
+	}
+}
+.mobile-container {
+	float:left;
+	width:100%;
+	display:inline-block;
+	margin:0;
+	position:relative;	
+}
+.holder {
+	position:relative;
+	background:$heighlight;
+	li {
+		display:block;
+		
+		a {
+			display:block;
+			width:92%;
+			color:#fff;
+			text-align:left;
+			padding:10px 4%;
+			font-size:em(14);
+			text-transform:uppercase;
+			&:hover {
+				background-color:$light;
+			}
+		}
+		ul {
+			li a {
+				width:88%;
+				padding:5px 0 5px 4%;
+				span {
+					float:left;
+					width: 0; 
+					height: 0;
+					margin:4px 5px 0 0;
+					border-top: 6px solid transparent;
+					border-bottom: 6px solid transparent;
+					border-left: 10px solid $linkcolor;
+				}
+			}
+		}
+	}
+}
+nav.mobile {
+	display:none;
+}
+
+
+.mainmenu {
+	display:none;
+	float:left;
+	text-align:center;
+	@media all and (min-width: $ipad) {
+		width:100%;
+		display:inline-block;
+		margin-top:em(20);
+	}
+	@media all and (min-width: $desktop) {
+		width:auto;
+		margin-top:0;
+	}
+	li {
+		position:relative;
+		display:inline;
+		a {
+			font-size:em(14);
+			padding:27px 25px;
+			display:inline-block;
+			text-transform:uppercase;
+			font-weight:bold;	
+		}
+		&:first-child a {
+			margin-left:0;
+		}
+		&:last-of-type a {
+			margin-right:0;
+		}
+		&:hover a, &:focus a {
+			color:$linkcolor;
+			background:$background;
+		}
+		&.current_page_item a, &.current_page_parent a {
+			color:$linkhovercolor;
+		}
+	}
+	ul {
+		display: none;
+	}
+}
+
+.mainmenu > li:hover ul {
+	position:absolute;
+	left:0;
+	min-width:225px;
+	display: block;
+	text-align:left;
+	border-top:2px solid #d6d6d6;
+	padding:0 25px;
+	background:$background;
+	z-index:200;
+	li {
+		display:block;
+		margin:0;
+		padding:10px 0;
+		border-bottom:2px solid #d6d6d6;
+		a {
+			color:$bodytext;
+			display:block;
+			font-weight:normal;
+			padding:5px 0 5px 10px;
+			span {
+				float:left;
+				width: 0; 
+				height: 0;
+				margin:4px 5px 0 0;
+				border-top: 6px solid transparent;
+				border-bottom: 6px solid transparent;
+				border-left: 10px solid $linkcolor;
+			}
+			&:hover {
+				color:#fff;
+				background:$linkcolor;
+				border-radius:5px;
+				span {
+					border-left: 10px solid #fff;
+				}
+			}
+		}
+		&:last-child a {
+			border-bottom:none;
+		}
+	}
+}
+
+

@@ -1,0 +1,483 @@
+@import "compass/css3";
+body,
+html {
+  height: 100% ; /* Chrome fix */
+}
+
+::selection {
+	color:$bodytext;
+    text-shadow: none;
+}
+body {
+	color:$bodytext;
+	font-size:100%;
+	background:$background;
+	font-family: 'PT Sans', sans-serif;
+	@media all and (min-width: $ipad) {
+		font-size:95%;
+	}
+	@media all and (min-width: $desktop) {
+		font-size:100%;
+	}
+}
+
+.wrapper {
+	position:relative;
+	width:96%;
+	margin:0 auto;
+	@media all and (min-width: $desktop) {
+		width:$desktop;
+	}
+}
+a {
+	color:$linkcolor;
+	&:hover {
+		color:$linkhovercolor;
+	}
+}
+img {
+	max-width:100%;
+}
+
+/* WP Image styles */
+img.alignright {float:right; margin:0 0 1em 5px}
+img.alignleft {float:left; margin:0 5px 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 5px}
+a img.alignleft {float:left; margin:0 5px 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+
+header {
+	width:95.6%;
+	min-height:70px;
+	display:inline-block;
+	padding:0 2%; /* 20/1000 */
+	margin:em(25) 0 em(17) 0;
+	background:#fff;
+	@include border-style(2px);
+	@media all and (min-width: $ipad) {
+		position:relative;
+	}
+	.logo { 
+		margin:23px auto 0 auto;
+		display:block;
+		@media all and (min-width: $ipad) {
+			float:left;
+			margin-right:20px; /* 20/1000 */
+		}
+	}
+}
+
+.social {
+	position:absolute;
+	top:em(25);
+	left:0;
+	@media all and (min-width: $ipad) {
+		left:auto;
+		right:em(20);
+	}
+	@media all and (min-width: $desktop) {
+		position:static;
+		float:right;
+		margin-top:23px;
+	}
+	li {
+		float:left;
+		margin-left:6px;
+	}	
+}
+
+.track {
+	width:96%;
+	padding:10px 2% 15px 2%;
+	display:inline-block;
+	background:$heighlight;
+	margin-top:em(17);
+	@media all and (min-width: $ipad) {
+		padding:0 2%;
+	}
+	p {
+		float:left;
+		color:#fff;
+		font-size:em(17);
+		line-height:50px;
+		margin-right:10px;
+		text-align:center;
+		text-transform:uppercase;
+		@media all and (min-width: $ipad) {
+			font-size:em(25);
+			text-align:left;
+		}
+	}
+	@media all and (min-width: $ipad) {
+		img {
+			margin-top:7px;
+		}
+	}
+	span {
+		float:right;
+		width:96%;
+		padding:9px 2%;
+		background:$light;
+		color:#fff;
+		font-size:em(14);
+		text-align:center;
+		margin-top:em(20);
+		text-transform:uppercase;
+		@media all and (min-width: $ipad) {
+			width:136px;
+			padding:9px 7px;
+			margin-top:6px;
+		}
+	}
+	&:hover span {
+		background:$linkhovercolor;
+	}
+}
+
+.col {
+	float:left;
+	width:48%;
+	margin:em(23) 0 em(50) 0;
+	&:nth-of-type(even) {
+		margin-left:4%;
+	}
+	@media all and (min-width: $ipad) {
+		width:23.5%; /* 235 / 1000 */
+		margin-left:2%; /* 20 / 1000 */
+		&:nth-of-type(even) {
+			margin-left:2%; /* 20 / 1000 */
+		}
+		&.first {
+			margin-left:0;
+		}
+	}
+	a {
+		
+		h1 {
+			font-size:em(18);
+			text-transform:uppercase;
+			margin:15px 0 5px 0;
+		}
+		p {
+			color:$bodytext;
+			font-size:em(14);
+			line-height:16px;
+			margin-bottom:5px;
+		}
+	}
+}
+.blocks {
+	min-height:94px;
+	background:#f5f6f8;
+	h2 {
+		color:$heighlight;
+		font-size:em(16);
+		margin-bottom:5px;
+	}
+	p, span {
+		color:$bodytext;
+		font-size:em(12);
+		line-height:14px;
+	}
+	.more {
+		color:$heighlight;
+	}
+	&:hover .more {
+		color:$linkhovercolor;
+	}
+}
+.b-one {
+	float:left;
+	width:96%;
+	padding:10px 2%; /* 20 / 1000 */
+	@include border-style(2px);
+	margin-bottom:em(18);
+	@media all and (min-width: $ipad) {
+		width:45.2%; /* 452 / 1000 */
+	}
+}
+.date {
+	position:relative;
+	left:-10px;
+	float:left;
+	width:60px;
+	height:60px;
+	padding-right:15px;
+	margin-right:5px;
+	border-right:1px solid $bodytext;
+	.day {
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:45px;
+		line-height:45px;
+		display:block;
+		font-size:em(50);
+		font-weight:bold;
+		text-align:center;
+	}
+	.month {
+		position:absolute;
+		bottom:0;
+		left:0;
+		width:100%;
+		font-size:em(12);
+		text-align:center;
+		text-transform:uppercase;
+	}
+}
+
+.morenews {
+	float:right;
+	color:$bodytext;
+	font-size:em(12);
+}
+
+.b-two {
+	float:left;
+	width:96%; /* 210 / 1000 */
+	padding:10px 2%; /* 20 / 1000 */
+	border:2px solid #d6d6d6;
+	margin-bottom:em(15);
+	@media all and (min-width: $ipad) {
+		width:20%; /* 206 / 1000 */
+		margin-bottom:0;
+		border-left:0;
+	}
+	@media all and (min-width: $desktop) {
+		width:21%; /* 206 / 1000 */
+	}
+}
+.b-three {
+	float:left;
+	width:96%; /* 206 / 1000 */
+	padding:10px 2%; /* 20 / 1000 */
+	border:2px solid #d6d6d6;
+	margin-bottom:em(15);
+	@media all and (min-width: $ipad) {
+		width:20%; /* 206 / 1000 */
+		margin-bottom:0;
+		border-left:0;
+	}
+	@media all and (min-width: $desktop) {
+		width:21%; /* 206 / 1000 */
+	}
+	a {
+		color:$heighlight;
+		font-size:em(12);
+	}
+}
+
+.columns {
+	position:relative;
+	width:100%;
+	.left{
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:48%;
+		border-right:1px solid #d6d6d6;
+		p {
+			margin-bottom:4px;
+		}
+		a {
+			display:block;
+			margin-top:7px;
+		}
+	}
+	.right {
+		position:absolute;
+		right:0px;
+		top:0px;
+		width:48%;
+	}
+}
+
+/* Content pages */
+section {
+	float:left;
+	width:96%;
+	min-height:365px;
+	padding:em(20) 2%;
+	@include border-style(2px);
+	background:#f5f6f8;
+	margin-bottom:em(25);
+	@media all and (min-width: $ipad) {
+		width:70.4%; /* 704 / 1000 */
+	}
+	h1 {
+		color:$linkcolor;
+		font-size:em(40);
+		line-height:40px;
+		font-family: 'Squada One', cursive;
+		text-transform:uppercase;
+	}
+	h2 {
+		font-size:em(20);
+		font-weight:bold;
+	}
+	h3 {
+		font-size:em(16);
+		font-weight:bold;
+	}
+	h4, h5, h6 {
+		font-size:em(14);
+		font-weight:bold;
+	}
+	.sub {
+		font-size:20px;
+		font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	}
+	p {
+		font-size:em(14);
+		margin-bottom:em(20);
+		a {
+			color:$bodytext;
+		}
+	}
+}
+.head {
+	display:block;
+	border-bottom:1px solid #d6d6d6;
+	margin-bottom:20px;
+	padding-bottom:10px;
+	p {
+		margin-bottom:0;
+	}
+}
+
+
+aside {
+	float:right;
+	width:96%;
+	padding:20px 2%;
+	@include border-style(2px);
+	background:#f5f6f8;
+	margin-bottom:em(25);
+	@media all and (min-width: $ipad) {
+		width:19.5%; /* 195 / 1000 */
+	}
+	h2 {
+		margin-bottom:5px;
+		color:$bodytext;
+		font-family: 'Squada One', cursive;
+		text-transform:uppercase;
+	}
+	ul li a {
+		width:100%;
+		display:block;
+		font-size:em(14);
+		padding:5px 0;
+		border-bottom:2px solid #d6d6d6;
+	}
+	ul li:last-child a {
+		border-bottom:0;
+	}
+}
+
+/* Posts */
+.cats {
+	color:$linkcolor;
+	font-size:(14);
+	a {
+		font-weight:bold;
+	}
+}
+
+section article {
+	width:100%;
+	display:inline-block;
+	margin-bottom:10px;
+	border-bottom:2px solid #d6d6d6;
+	&:last-of-type {
+		margin-bottom:100px;
+	}
+}
+
+section article a {
+	h2 {
+		color:$bodytext;
+		font-size:em(25);
+		line-height:27px;
+		text-transform:uppercase;
+	}
+	p {
+		color:$bodytext;
+		margin-bottom:5px;
+	}	
+}
+
+img.attachment-large {
+	display:block;
+	margin-bottom:1em;
+}
+
+blockquote {
+	position:relative;
+	background: #f9f9f9;
+	margin:1.5em 10px;
+	padding:0.5em 10px;
+	text-indent:30px;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+	position:absolute;
+	top:43px;
+	left:-23px;
+	color:$heighlight;
+	content: open-quote;
+	font-size: 6em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+}
+blockquote p {
+	display: inline;
+	font-size:em(18);
+	font-style:italic;	
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+blockquote span {
+	color:$heighlight;
+	font-size:em(14);
+	font-weight:bold;
+	font-family: 'PT Sans', sans-serif;
+}
+
+
+
+footer {
+	position:relative;
+	display:inline-block;
+	margin-bottom:em(25);
+	width:100%;
+	.footernav {
+		float:left;
+		li {
+			display:inline;
+			a {
+				float:left;
+				color:$bodytext;
+				font-size:em(12);
+				padding:0 7px;
+				border-right:1px solid $bodytext;
+				&:hover {
+					color:$linkcolor;
+				}
+			}
+			&:last-child a {
+				border:none;
+			}
+		}
+	}
+	.social {
+		float:right;
+		position:static;
+		margin-top:0;
+	}	
+}
+
+
+
